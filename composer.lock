@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "0dcc2690a18e4089f9319d50b672574d",
+    "packages": [
+        {
+            "name": "hadi/database",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/im4aLL/pdo-mysql-driver.git",
+                "reference": "c8d60b1f57c5e10637a73bd0e933e019d3625e6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/im4aLL/pdo-mysql-driver/zipball/c8d60b1f57c5e10637a73bd0e933e019d3625e6d",
+                "reference": "c8d60b1f57c5e10637a73bd0e933e019d3625e6d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Hadi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Habib Hadi",
+                    "email": "me@habibhadi.com"
+                }
+            ],
+            "description": "Simple database driver for mysql (PDO)",
+            "support": {
+                "issues": "https://github.com/im4aLL/pdo-mysql-driver/issues",
+                "source": "https://github.com/im4aLL/pdo-mysql-driver/tree/master"
+            },
+            "time": "2017-09-10T12:25:32+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

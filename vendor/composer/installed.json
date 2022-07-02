@@ -1,0 +1,49 @@
+{
+    "packages": [
+        {
+            "name": "hadi/database",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/im4aLL/pdo-mysql-driver.git",
+                "reference": "c8d60b1f57c5e10637a73bd0e933e019d3625e6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/im4aLL/pdo-mysql-driver/zipball/c8d60b1f57c5e10637a73bd0e933e019d3625e6d",
+                "reference": "c8d60b1f57c5e10637a73bd0e933e019d3625e6d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2017-09-10T12:25:32+00:00",
+            "type": "package",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Hadi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Habib Hadi",
+                    "email": "me@habibhadi.com"
+                }
+            ],
+            "description": "Simple database driver for mysql (PDO)",
+            "support": {
+                "issues": "https://github.com/im4aLL/pdo-mysql-driver/issues",
+                "source": "https://github.com/im4aLL/pdo-mysql-driver/tree/master"
+            },
+            "install-path": "../hadi/database"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

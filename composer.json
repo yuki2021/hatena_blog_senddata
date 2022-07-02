@@ -1,0 +1,5 @@
+{
+    "require": {
+        "hadi/database": "^1.0"
+    }
+}
