@@ -46,8 +46,13 @@ class GetAbstract {
 
     /// 見つけたデータをJSONとして送り返す
     public function sendJSON($data) {
+        header('Access-Control-Allow-Origin:https://www.ituki-yu2.net');
+        header("Content-type: text/xml;charset=utf-8");
         if(!empty($data['abstract'])) {
             echo json_encode(array('result' => $data['abstract']),
+                JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        } else {
+            echo json_encode(array('error' => 'error'),
                 JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
         }
     }
