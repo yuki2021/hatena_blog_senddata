@@ -22,24 +22,31 @@ class GetAbstract {
 
     /// 渡されたURLでDBを検索する。見つけたデータを返す
     public function searchDB($url) {
-        $sql = 'SELECT b.abstract FROM `hatena_blog_data` AS a 
-        LEFT JOIN `hatena_content_abstract` AS b 
-        ON a.`id` = b.`hatena_blog_id`
-        where b.`abstract` IS NOT NULL AND
-        a.`url` = :url
-        order by a.`published` desc';
-        
-        //prepareによるクエリの実行準備
-        $sth = $this->db->pdo->prepare($sql);
+        // APCuにキャッシュがあればそれを返す
+        $data = apcu_fetch($url);
+        if ($data === false) {
+            $sql = 'SELECT b.abstract FROM `hatena_blog_data` AS a 
+            LEFT JOIN `hatena_content_abstract` AS b 
+            ON a.`id` = b.`hatena_blog_id`
+            where b.`abstract` IS NOT NULL AND
+            a.`url` = :url
+            order by a.`published` desc';
+            
+            //prepareによるクエリの実行準備
+            $sth = $this->db->pdo->prepare($sql);
 
-        //検索クエリの設定
-        $sth -> bindValue(':url', $url);
-        
-        //検索クエリの実行
-        $sth -> execute();
+            //検索クエリの設定
+            $sth -> bindValue(':url', $url);
+            
+            //検索クエリの実行
+            $sth -> execute();
 
-        //結果を配列で取得
-        $data = $sth -> fetch(PDO::FETCH_ASSOC);
+            //結果を配列で取得
+            $data = $sth -> fetch(PDO::FETCH_ASSOC);
+
+            // APCuにキャッシュする
+            apcu_store($url, $data, 60 * 60 * 24);
+        }
 
         return $data;
     }
